@@ -1,0 +1,48 @@
+
+   <div ng-controller="currencyCtrl" ng-init="currency()">
+        <section class="container-fluid">
+            <img ng-src="currencyImage.png" alt="" id="pic">
+        </section>
+        <main class="container">
+            <section id="currency-search">
+                <h2 id="heading">Know the currency of</h2>
+                <h1><span class="countryName">{{country_name}}</span></h1>
+            </section>
+            <section class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <!--ng-repeat ="curr in fromCurrency track by $index"-->
+                            <select name="" id="fromMenu" ng-model='fromC.model'>
+                                <option value='{{curr}}' ng-repeat="curr in fromC.fromCurrency">{{curr}}
+                                </option>
+                            </select>
+                            <span id="CName">{{fromCurrencyName}}</span>
+                        </div>
+                        <div class="card-body">
+                            <p><span id="CSymbol">{{fromCurrencySymbol}}</span>
+                                <input type="number" id="amount" ng-model="amount" placeholder="Enter amount">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-outline" id="check" type="submit" ng-click=showMe()>Check</button>
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <select name="" id="toMenu" ng-model='toC.model'>
+                                <option value="{{curr}}" ng-repeat="curr in toC.toCurrency">{{curr}}
+                                </option>
+                            </select>
+                            <span id="CName">{{currencyName}}</span>
+                        </div>
+                        <div class="card-body">
+                            <p id="result"><span id="CSymbol">{{currencySymbol}}</span><span> {{toCurrencyValue}}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </section>
+        </main>
+        </div>

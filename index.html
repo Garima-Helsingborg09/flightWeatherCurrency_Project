@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="manmaApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Project</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flightstyle.css">
+    <link rel="stylesheet" href="weatherstyle.css">
+    <link rel="stylesheet" href="currencystyle.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg my_nav">
+        <a class="navbar-brand" href="#"><img src="logo2.png" style="height:60px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#!/">Flights<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="#!/weather">Check Weather</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="#!/currency">Currency Rate</a>
+            </li>
+           
+          </ul>
+          <button class="btn btn-outline-success signin_button mr-sm-2" type="submit">Sign UP</button>
+          <button class="btn btn-outline-success signin_button my-2 my-sm-0" type="submit">Sign In</button>
+          
+        </div>
+      </nav>
+     
+            <main ng-view></main>
+            <footer>
+                Thank you for visiting us! &copy; 2018 
+            </footer>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.7.5/angular-route.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ngstorage@0.3.11/ngStorage.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body{
+    font-family:sans-serif;
+    background-color: #f5f5f5;
+}
+.my_nav{
+    color: #2d67b2;
+   padding-bottom: 0;
+}
+
+a{
+    font-size: 20px;
+    font-weight: 300;
+}
+a:hover{
+    color: #f26722;
+}
+footer{
+    color: #2d67b2;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+}
+.signin_button{
+    color:#2d67b2;
+    border-color: #2d67b2;
+}
+.signin_button:hover{
+    color:#FFF;
+    background-color: #f26722;
+}
+

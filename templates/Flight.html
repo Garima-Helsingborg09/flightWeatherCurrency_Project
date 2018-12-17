@@ -1,0 +1,91 @@
+<section>
+ <div class="head"></div>
+</section>
+
+<section>
+        <div class="container home_container" >
+            <h1>Book Domestic &amp; International Flight</h1>
+            <form class="book_form">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="source">Source</label>
+                        <input type="text" class="form-control" id="source" placeholder="Eg.New York,New Delhi" ng-model="src" ng-change="func1()">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="desti">Destination</label>
+                        <input type="text" class="form-control" id="desti" placeholder="Eg.LOndon,New York" ng-model="desti" ng-change="func2()">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="depdt">Date Of Departure</label>
+                        <input type="date" class="form-control" id="depdt" placeholder="Choose Date" ng-model="date">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="seatclass">Class</label>
+                        <select id="seatclass" class="form-control" ng-model="seatclass">
+                            <option value='E'>Economy</option>
+                            <option value='B'>Buisness</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="adultsno">NO. Of Travellers</label>
+                        <select id="adultsno" class="form-control" ng-model="noofper">
+                            <option>Traveller(s)</option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                            <option value='7'>7</option>
+                            <option value='8'>8</option>
+                            <option value='9'>9</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                        
+                 
+                    <button id="search" class="btn col-md-2 button1" ng-click="search()">Get Set Go</button>
+               
+                </div>
+                </form>
+            </div>
+            </section>
+            
+
+            <div class="container number" id="results" ng-show="searchComplete">
+                    <h2>Total Flights : {{details.length}}</h2>
+            </div>
+                <section>
+                    <div class="container table_container" ng-show="searchComplete">
+                        <table class="table" id="flight_info">
+                            <thead class="thead">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Airline Name</th>
+                                    <th scope="col">Departure Time</th>
+                                    <th scope="col">Arrival Time</th>
+                                    <th scope="col">Stops</th>
+                                    <th scope="col">Total Fare</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="flight_body" ng-model="flight_body">
+                                <tr ng-repeat="x in details">
+                                    <td><i class="fas fa-plane-departure" style="color: #f26722;width:10px;height:10px"></i></td>
+                                    <td><b>{{x.airline}}</b></td>
+                                    <td>{{x.deptime}}</td>
+                                    <td>{{x.arrtime}}</td>
+                                    <td><b>({{x.stops}}</b> Stop/s)<br>{{x.splitduration}}</td>
+                                    <td>{{x.fare.grossamount/8.0 | number : 0}}<span style="color:black"> Kr</span></td>
+                                    <td><button type="submit" class="my_button">Book</button></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </section>

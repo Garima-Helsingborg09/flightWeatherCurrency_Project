@@ -1,0 +1,60 @@
+.head1{
+    height:250px;
+    background-image: url("beach.jpg");  
+    width:100%;
+    display:flex;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.1px;
+    background-repeat: no-repeat;
+}
+.home1_container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+    background-color: #2d67b2;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    color: white;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+}
+.weather_button{
+background-color: #f26722;
+font-size: 19px;
+color: #FFF;
+}
+
+#weather_info{
+    margin-top: 30px;
+}
+#weather-search {
+    text-align: center;
+}
+
+#detailWeather {
+    color:#FFF;
+}
+#city, #countryName {
+    color: #f26722;
+    font-size: 30px;
+}
+span {
+    color: #f26722;
+    font-size: 18px;
+    font-weight: bold;
+}
+#currentWeather th {
+    width: 120px;
+}
+.table_box{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.tab_head{
+    background-color: #f26722;
+    color: #FFF;
+}

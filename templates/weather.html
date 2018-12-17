@@ -1,0 +1,98 @@
+<section>
+        <div class="head1"></div>
+       </section>
+
+<section id="knowWeather" class="container home1_container">
+        
+            <div>
+           <h1>What's the Weather of <br><em>{{city1}}</em></h1>
+           <br>     
+           
+                <form class="book_form" ng-submit='weather(city1)'>
+                <div class="form-row">
+                        <div class="col-sm-4"></div>
+                        <div class="form-group col-md-4">                                            
+                        <input type="text" class="form-control" id="cityName" ng-model="city1" placeholder="Enter City Name">
+                        </div>
+                        <div class="form-group col-md-2">
+                        <button class="btn weather_button" type="submit">Enter</button>
+                        </div>
+                    </form>
+                
+            </div>
+            <br>
+          <!--  <p>Date:<input type="date" name="date" id="date" ng-model="date"></p>  -->
+      
+ 
+            <div class="row" id="detailWeather" ng-show="loadComplete">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-2" id="firstcol">
+                    <p id = "city" ng-bind="city"></p>
+                   <!-- <p id="date" ng-controller="dateCtrl">{{date + 1}}</p> -->
+                    <p><b><em>{{description}}</b></em></p>
+                    <img ng-src="{{image}}" alt="">
+                    <p><span>{{temp_c}}&deg;c</span></p>
+                    <p><b>Feels like: </b><span><b><em>{{feelsLike}}</b></em><b>&deg;c</b></span></p>
+                </div>
+                <div class="col-sm-4" id="firstcol">
+                    <p id="countryName"><b><em>{{countryName}}</b></em></p>
+                    <table id="currentWeather" style="width:100%">
+                            <tr>
+                              <th><b>Latitude:</b></th>
+                              <td><span> {{lat}} </span></td>
+                            </tr>
+                            <tr>
+                              <th><b>Longitude:</b></th>
+                              <td><span>{{lon}}</span></td>
+                            </tr>
+                            <tr>
+                              <th><b>Sunrise:</b></th>
+                              <td><span>{{sunRise}}</span></td>
+                            </tr>
+                            <tr>
+                              <th><b>Sunset:</b></th>
+                              <td><span> {{sunset}}</span></td>
+                            </tr>
+                            <tr>
+                              <th><b>Wind: </b></th>
+                              <td><span>{{wind}}<b>mph</b></span></td>
+                            </tr>
+                            <tr>
+                              <th><b>Humidity: </b></th>
+                              <td><span>{{humidity}}<b>%</b></span></td>
+                            </tr>
+                          </table>
+                                
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </section>
+   
+        <section>
+            <div  class="container table_box" ng-show="loadComplete">
+            <table class="table" id="weather_info">
+                <thead class="tab_head">
+                    <tr>
+                            <th>Date</th>
+                            <th>Temperature</th>
+                            <th>Description</th>
+                            <th>Icon</th>
+                            <th>Wind</th>
+                            <th>Sunrise</th>
+                            <th>Sunset</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <tr ng-repeat="x in foreweather">
+                    <td>{{x.date}}</td>
+                    <td>{{x.day.avgtemp_c}}</td>
+                    <td>{{x.day.condition.text}}</td>
+                    <td><img ng-src="{{x.day.condition.icon}}" alt=""></td>
+                    <td>{{x.day.maxwind_mph}}</td>
+                    <td>{{x.astro.sunrise}}</td>
+                    <td>{{x.astro.sunset}}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        </section>
